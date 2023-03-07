@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,38 +10,46 @@ namespace MoviesWeb.Controllers
 {
 	public class HomeController : Controller
 	{
+		private MoviesWebContext ctx = new MoviesWebContext();
 		public ActionResult Index()
 		{
+			var movies = ctx.Movies.OrderBy(q => q.Name).ToList();
+			ViewBag.SelectedDepartment = new SelectList(movies, "Name");
+
+			return View(movies.ToList());
+		}
+
+		public ActionResult Favorite()
+		{
+			ViewBag.Message = "Your application description page.";
+			var movie = new Movie()
+			{
+				Name = "movie1",
+				Date = System.DateTime.Now,
+				Image = "",
+				Description = "Description sdfsdf",
+				GenreID = 2,
+				Rate = 1,
+				Favorite = false
+			};
+
+			ctx.Movies.Add(movie);
+			ctx.SaveChanges();
 			return View();
 		}
 
-		public ActionResult About()
+		public ActionResult Details(int? id)
 		{
-			ViewBag.Message = "Your application description page.";
-			using (var ctx = new MoviesWebContext())
+			if (id == null)
 			{
-				var movie = new Movie()
-				{
-					Name = "movie1",
-					Date = System.DateTime.Now,
-					Image = "",
-					Description = "Description sdfsdf",
-					GenreID = 2,
-					Rate = 1,
-					Favorite = false
-				};
-
-				ctx.Movies.Add(movie);
-				ctx.SaveChanges();
-				/*
-				var genre = new Genre()
-				{
-					Name = "Научная Фантастика"
-				};
-				ctx.Genres.Add(genre);
-				ctx.SaveChanges();*/
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
-			return View();
+			Movie movie = ctx.Movies.Find(id);
+			if (movie == null)
+			{
+				return HttpNotFound();
+			}
+			return View(movie);
 		}
 
 		public ActionResult Contact()
