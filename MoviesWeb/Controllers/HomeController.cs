@@ -58,12 +58,13 @@ namespace MoviesWeb.Controllers
 		public async Task<ActionResult> Contact()
 		{
 			ThemoviedbAdapter themoviedbAdapter = new ThemoviedbAdapter();
-			var result = await themoviedbAdapter.PostAsync("https://api.themoviedb.org/3/movie/popular?api_key=dad8a59d86a2793dda93aa485f7339c1", "{ \"api_key\": \"dad8a59d86a2793dda93aa485f7339c1\" }");//"api_key", "dad8a59d86a2793dda93aa485f7339c1" 
-
-			//GetPopularMovies();
+			
+			var resultPopularMovies = await themoviedbAdapter.GetPopularMovies();
+			var resultTopRatedMoviesApi = await themoviedbAdapter.GetTopRatedMoviesApi();
+			var resultMovieDetailsApi = await themoviedbAdapter.GetMovieDetailsApi(631842);
 			ViewBag.Message = "Your contact page.";
 
-			return View(result);
+			return View();
 		}
 	}
 }

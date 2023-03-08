@@ -14,73 +14,82 @@ namespace MoviesWeb.AdapterOfMovieService.ThemoviedbService
 	public class ThemoviedbAdapter
 	{
 		private readonly HttpClient client;
-
+		private readonly string apiKey = "dad8a59d86a2793dda93aa485f7339c1";
+		private readonly string baseUrl = "https://api.themoviedb.org/3/movie/";
 		public ThemoviedbAdapter()
 		{
 			client = new HttpClient();
 		}
-		Dictionary<string, string> values = new Dictionary<string, string>
+	
+		public async Task<MoviesApiPageModel> GetPopularMovies()
 		{
-		   { "api_key", "dad8a59d86a2793dda93aa485f7339c1" },
-		};
-		string BaseUrl = "https://api.themoviedb.org/";
-		/*
-			"API_Key": "dad8a59d86a2793dda93aa485f7339c1",
-
-			"UrlForPopularMovies": "https://api.themoviedb.org/3/movie/popular?api_key=",
-
-			"UrlForTopRatedMovies": "https://api.themoviedb.org/3/movie/top_rated?api_key=",
-
-			"UrlForMovieDetails": "https://api.themoviedb.org/3/movie/"
-		 
-		*/
-		public async Task<string> PostAsync(string url, string data)
-		{
-			var content1 = new StringContent(data, Encoding.UTF8, "application/json");
-			var content = new FormUrlEncodedContent(values);
-			//client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "dad8a59d86a2793dda93aa485f7339c1");
-			var response = await client.GetAsync(url);
-			var responseString = await response.Content.ReadAsStringAsync();
-			return responseString;
-		}
-		public async Task<PopularMoviesApiModel> GetPopularMovies()
-		{
-			string result="";
-			var content = new FormUrlEncodedContent(values);
+			string responseContent = "";
 			try
 			{
-				//client.DefaultRequestHeaders.Authorization =  new AuthenticationHeaderValue("Bearer", "dad8a59d86a2793dda93aa485f7339c1");
-				var response = await client.SendAsync(new HttpRequestMessage(HttpMethod.Post, "https://api.themoviedb.org/3/movie/popular?api_key=dad8a59d86a2793dda93aa485f7339c1"));
-				result = await response.Content.ReadAsStringAsync();
+				var response = await client.GetAsync($"{baseUrl}/popular?api_key={apiKey}");
+				if (response.IsSuccessStatusCode)
+				{
+					responseContent = await response.Content.ReadAsStringAsync();
+				}
+				else
+				{
+					throw new HttpRequestException($"GET request failed with status code: {response.StatusCode}");
+				}
 			}
 			catch (Exception ex)
 			{
-				;
+				
 			}
-			finally
+			
+			var respObj = JsonConvert.DeserializeObject<MoviesApiPageModel>(responseContent);
+			return respObj;
+		}
+			
+		public async Task<MoviesApiPageModel> GetTopRatedMoviesApi()
+		{
+			string responseContent = "";
+			try
 			{
-				;
+				var response = await client.GetAsync($"{baseUrl}/top_rated?api_key={apiKey}");
+				if (response.IsSuccessStatusCode)
+				{
+					responseContent = await response.Content.ReadAsStringAsync();
+				}
+				else
+				{
+					throw new HttpRequestException($"GET request failed with status code: {response.StatusCode}");
+				}
 			}
-			
-			
-			var respObj = JsonConvert.DeserializeObject<PopularMoviesApiModel>(result);
+			catch (Exception ex)
+			{
+
+			}
+
+			var respObj = JsonConvert.DeserializeObject<MoviesApiPageModel>(responseContent);
 			return respObj;
 		}
+		public async Task<MovieDetailsApiModel> GetMovieDetailsApi(long MovieId) //631842
+		{
+			string responseContent = "";
+			try
+			{
+				var response = await client.GetAsync($"{baseUrl}/movie/{MovieId}?api_key={apiKey}");
 			
-		public async Task<TopRatedMoviesApiModel> GetTopRatedMoviesApi()
-		{
-			var content = new FormUrlEncodedContent(values);
-			var response = await client.GetAsync("https://api.themoviedb.org/3/movie/top_rated?api_key=dad8a59d86a2793dda93aa485f7339c1");
-			var result = await response.Content.ReadAsStringAsync();
-			var respObj = JsonConvert.DeserializeObject<TopRatedMoviesApiModel>(result);
-			return respObj;
-		}
-		public async Task<MovieDetailsApiModel> MovieDetailsApi()
-		{
-			var content = new FormUrlEncodedContent(values);
-			var response = await client.GetAsync("https://api.themoviedb.org/3/movie/");
-			var result = await response.Content.ReadAsStringAsync();
-			var respObj = JsonConvert.DeserializeObject<MovieDetailsApiModel>(result);
+				if (response.IsSuccessStatusCode)
+				{
+					responseContent = await response.Content.ReadAsStringAsync();
+				}
+				else
+				{
+					throw new HttpRequestException($"GET request failed with status code: {response.StatusCode}");
+				}
+
+			}
+			catch (Exception ex)
+			{
+
+			}
+			var respObj = JsonConvert.DeserializeObject<MovieDetailsApiModel>(responseContent);
 			return respObj;
 		}
 	}
