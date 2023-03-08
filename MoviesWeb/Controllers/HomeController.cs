@@ -5,12 +5,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MoviesWeb.AdapterOfMovieService.ThemoviedbService;
+using System.Threading.Tasks;
 
 namespace MoviesWeb.Controllers
 {
 	public class HomeController : Controller
 	{
 		private MoviesWebContext ctx = new MoviesWebContext();
+		
 		public ActionResult Index()
 		{
 			var movies = ctx.Movies.OrderBy(q => q.Name).ToList();
@@ -52,11 +55,15 @@ namespace MoviesWeb.Controllers
 			return View(movie);
 		}
 
-		public ActionResult Contact()
+		public async Task<ActionResult> Contact()
 		{
+			ThemoviedbAdapter themoviedbAdapter = new ThemoviedbAdapter();
+			var result = await themoviedbAdapter.PostAsync("https://api.themoviedb.org/3/movie/popular?api_key=dad8a59d86a2793dda93aa485f7339c1", "{ \"api_key\": \"dad8a59d86a2793dda93aa485f7339c1\" }");//"api_key", "dad8a59d86a2793dda93aa485f7339c1" 
+
+			//GetPopularMovies();
 			ViewBag.Message = "Your contact page.";
 
-			return View();
+			return View(result);
 		}
 	}
 }
