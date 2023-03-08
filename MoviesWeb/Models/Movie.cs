@@ -11,8 +11,9 @@ namespace MoviesWeb.Models
 		public string Image {set; get;}
 		public string Description{set; get;}
 		public int GenreID { set; get; }
-		public int Rate { set; get; }
+		public float Rate { set; get; }
 		public bool Favorite { set; get; }
 		public virtual Genre Genre { get; set; }
+		public long ExternalMovieId { set; get; }
 	}
 }

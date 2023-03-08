@@ -36,7 +36,7 @@ namespace MoviesWeb
                         });
                         context.Genres.AddRange(genres);
                          base.Seed(context);
-                        var movies = new List<Movie>();
+                       /* var movies = new List<Movie>();
 
                         movies.Add(new Movie()
                         {
@@ -52,7 +52,7 @@ namespace MoviesWeb
 
                         context.Movies.AddRange(movies);
 
-                        base.Seed(context);
+                        base.Seed(context);*/
                 }
         }
 }

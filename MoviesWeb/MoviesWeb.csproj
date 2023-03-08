@@ -53,6 +53,9 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -137,6 +140,10 @@
     <Compile Include="Migrations\202303071504326_IntialDb.designer.cs">
       <DependentUpon>202303071504326_IntialDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303081410147_extendMoviesModel.cs" />
+    <Compile Include="Migrations\202303081410147_extendMoviesModel.designer.cs">
+      <DependentUpon>202303081410147_extendMoviesModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -202,6 +209,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303071504326_IntialDb.resx">
       <DependentUpon>202303071504326_IntialDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303081410147_extendMoviesModel.resx">
+      <DependentUpon>202303081410147_extendMoviesModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

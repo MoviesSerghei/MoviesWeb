@@ -176,3 +176,6 @@ C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.pdb
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.AssemblyReference.cache
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.IntialDb.resources
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.GenerateResource.cache
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.dll
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.xml
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.extendMoviesModel.resources

@@ -11,7 +11,7 @@ namespace MoviesWeb.AdapterOfMovieService.ThemoviedbAdapterModel
 		[JsonProperty("page")]
 		public long Page { set; get; }
 		[JsonProperty("results")]
-		List<MovieApi> Results = new List<MovieApi>();
+		public List<MovieApi> Results = new List<MovieApi>();
 		[JsonProperty("total_pages")]
 		public long TotalPages { set; get; }
 		[JsonProperty("total_results")]
