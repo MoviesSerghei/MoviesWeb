@@ -179,3 +179,5 @@ C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.cspro
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.xml
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.extendMoviesModel.resources
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.Mvc.dll
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.Mvc.xml

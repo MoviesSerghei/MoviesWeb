@@ -9,6 +9,9 @@ using MoviesWeb.AdapterOfMovieService.ThemoviedbService;
 using System.Threading.Tasks;
 using MoviesWeb.AdapterOfMovieService.ThemoviedbAdapterModel;
 using PagedList;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace MoviesWeb.Controllers
 {
@@ -32,32 +35,39 @@ namespace MoviesWeb.Controllers
 			}
 
 			ViewBag.CurrentFilter = searchString;
+			IEnumerable<Movie> movies;
+			//IEnumerable<Movie> movies = ctx.Movies.OrderBy(q => q.Id);
+
+
+			//получить фильмы
 			var popularMovies = await themoviedbAdapter.GetPopularMovies();
-			List<MovieApi> moviesApi;
-			if (!String.IsNullOrEmpty(searchString))
-			{
-				moviesApi = popularMovies.Results.Where(s => s.Title.Contains(searchString)
-						       || s.OriginalTitle.Contains(searchString)).ToList();
-			}
-			else
-			{
-				moviesApi = popularMovies.Results;
-			}
+				List<MovieApi> moviesApi;
+				if (!String.IsNullOrEmpty(searchString))
+				{
+					moviesApi = popularMovies.Results.Where(s => s.Title.Contains(searchString)
+							       || s.OriginalTitle.Contains(searchString)).ToList();
+				}
+				else
+				{
+					moviesApi = popularMovies.Results;
+				}
 
-			var movies = moviesApi.Select(x => new Movie
-			{
-				Name = x.Title,
-				Date = Convert.ToDateTime(x.ReleaseDate),
-				Image = x.PosterPath,
-				Description = x.Overview,
-				GenreID = 2,
-				Rate = x.VoteAverage,
-				Favorite = false,
-				ExternalMovieId = x.Id
-			});
+				movies = moviesApi.Select(x => new Movie
+				{
+					Name = x.Title,
+					Date = Convert.ToDateTime(x.ReleaseDate),
+					Image = $"https://image.tmdb.org/t/p/w500{x.PosterPath}",
+					Description = x.Overview,
+					GenreID = 2,
+					Rate = x.VoteAverage,
+					Favorite = false,
+					ExternalMovieId = x.Id
+				});
+				ctx.Movies.AddRange(movies);
+				ctx.SaveChanges();
+			
+	
 
-			ctx.Movies.AddRange(movies);
-			ctx.SaveChanges();
 			
 			/*
 			switch (sortOrder)
@@ -76,7 +86,7 @@ namespace MoviesWeb.Controllers
 					break;
 			}
 			*/
-			int pageSize = 30;
+			int pageSize = 10;
 			int pageNumber = (page ?? 1);
 			
 			return View(movies.ToPagedList(pageNumber, pageSize));
