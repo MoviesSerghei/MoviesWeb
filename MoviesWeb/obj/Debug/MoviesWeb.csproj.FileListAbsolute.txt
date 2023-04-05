@@ -142,6 +142,8 @@ C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\EntityFramework.SqlSe
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\Newtonsoft.Json.dll
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.dll
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.Mvc.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.Helpers.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.Mvc.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.Optimization.dll
@@ -152,6 +154,8 @@ C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.WebPages.R
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\WebGrease.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\EntityFramework.xml
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.xml
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.Mvc.xml
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.Helpers.xml
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.Mvc.xml
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\System.Web.Optimization.xml
@@ -169,15 +173,10 @@ C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\ru\System.Web.Razor.r
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.IntialDb.resources
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.extendMoviesModel.resources
+C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.GenerateResource.cache
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.CoreCompileInputs.cache
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.CopyComplete
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.dll
 C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.pdb
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.AssemblyReference.cache
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.IntialDb.resources
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.csproj.GenerateResource.cache
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.dll
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.xml
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\obj\Debug\MoviesWeb.Migrations.extendMoviesModel.resources
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.Mvc.dll
-C:\Users\SergheiS\Documents\GitHub\MoviesWeb\MoviesWeb\bin\PagedList.Mvc.xml
