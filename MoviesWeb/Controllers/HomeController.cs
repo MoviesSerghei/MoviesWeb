@@ -38,7 +38,6 @@ namespace MoviesWeb.Controllers
 			IEnumerable<Movie> movies;
 			//IEnumerable<Movie> movies = ctx.Movies.OrderBy(q => q.Id);
 
-
 			//получить фильмы
 			var popularMovies = await themoviedbAdapter.GetPopularMovies();
 				List<MovieApi> moviesApi;
@@ -65,10 +64,6 @@ namespace MoviesWeb.Controllers
 				});
 				ctx.Movies.AddRange(movies);
 				ctx.SaveChanges();
-			
-	
-
-			
 			/*
 			switch (sortOrder)
 			{
