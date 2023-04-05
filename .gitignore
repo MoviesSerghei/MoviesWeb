@@ -17,7 +17,7 @@
 mono_crash.*
 
 # Build results
-bin/
+[Bb]in/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -453,4 +453,4 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-MoviesWeb/bin/
+
